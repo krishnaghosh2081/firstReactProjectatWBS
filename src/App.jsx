@@ -1,5 +1,13 @@
+import EntryProvider from "./context/EntryContext";
+import Header from "./component/Header";
+
 const App = () => {
-    return <div className='text-2xl'>Hello there</div>;
+    return <div>
+            
+            <EntryProvider>
+                <Header/>
+            </EntryProvider>
+    </div>;
 };
 
 export default App;
