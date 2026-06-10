@@ -10,8 +10,8 @@ export default function EntryProvider({ children }) {
     const date=new Intl.DateTimeFormat("en-US").format(new Date());
     const entryDate=new Intl.DateTimeFormat("en-US").format(new Date(entry.date));
 
-    console.log(date);
-    console.log(entryDate);
+    //console.log(date);
+    //console.log(entryDate);
 
     if(compareDates(entryDate,date)){
         alert("Future date entry not allowed!!");
