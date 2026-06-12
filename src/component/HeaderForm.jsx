@@ -9,6 +9,7 @@ const initialState = { title: '',
 const HeaderForm = () => {
     const {addEntry}=useEntry();
     const [form, setForm] = useState(initialState);
+    const today = new Date().toISOString().split('T')[0];
 
     const handleChange = (e) => {
     e.preventDefault();
@@ -58,13 +59,13 @@ const HeaderForm = () => {
 
     return (
         
-    <div className="bg-white p-6 rounded-lg shadow space-y-4 max-w-md mx-auto">
+    <div className="bg-blue-200 p-6   mx-auto">
       <h3 className="text-xl font-bold">Entry Form</h3>
 
-      <div className="space-y-2">
+      <div className="">
         <form
           onSubmit={handleSubmit}
-          className="space-y-4 border-2 p-4 rounded-sm"
+          className=" border-2 p-4 rounded-sm"
         >
         <label className="block text-sm font-medium text-gray-700">
           Title
@@ -83,6 +84,7 @@ const HeaderForm = () => {
             value={form.date}
             type="date"
             onChange={handleChange}
+            // max={today}
             className="mt-1 block w-full border border-gray-300 px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-yellow-600"
           />
         </label>
@@ -107,13 +109,16 @@ const HeaderForm = () => {
             className="mt-1 block w-full border border-gray-300 px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-yellow-600"
           />
         </label>
-
-        <button name="submit"
+        <br/>
+        <div className="flex w-full justify-items-end">
+          <button name="submit"
             type="submit"
             className="w-[100px] py-2 bg-blue-800 text-white rounded hover:bg-pink-700"
           >
             Submit form
           </button>
+        </div>
+        
         </form>
       </div>
       </div>

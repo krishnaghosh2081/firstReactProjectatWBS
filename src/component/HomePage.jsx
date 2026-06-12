@@ -8,7 +8,7 @@ const HomePage = () => {
     //const [image, setIsModalOpen] = useState(false);
 
     return (
-    <main className="min-h-screen bg-gray-50 p-8 font-sans">
+    <main className="bg-blue-200 p-8 font-sans">
       <h2 className="text-2xl font-bold text-center mb-6">
         Diary Entry to display
       </h2>
@@ -19,11 +19,14 @@ const HomePage = () => {
            //console.log("P:",p),
             <div
               key={p.date}
-              className="bg-brown p-4 rounded shadow text-center capitalize hover:shadow-md transition-shadow"
+              className="bg-pink-100 p-4 rounded-2xl shadow text-center capitalize hover:shadow-md transition-shadow"
               
             >
-              <span className="flex flex-col items-center font-semibold text-yellow-700">Title:{p.title}, Date: {p.date}  
-             {<img src={ p.imgUrl} />} </span>
+              <span className="flex flex-col items-center font-semibold text-yellow-700"><b>{p.title}</b>  
+             {<img src={ p.imgUrl} />}
+             <br/>
+             {p.date}
+              </span>
             
             <br/>
             <ShowEntry entry={p}/>
